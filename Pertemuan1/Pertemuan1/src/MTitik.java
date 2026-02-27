@@ -6,6 +6,9 @@
 public class MTitik {
     public static void main(String[] args) {
         Titik T1 = new Titik();
+        Titik T2 = new Titik();
+        T2.setAbsis(4);
+        T2.setOrdinat(8);
         T1.setAbsis(2);
         T1.setOrdinat(4);
         T1.getAbsis();
@@ -15,5 +18,9 @@ public class MTitik {
         T1.getAbsis();
         T1.getOrdinat();
         T1.printTitik();
+        int kuadran = T1.getKuadran();
+        double jarak = T1.getJarak(T2);
+        System.out.println(jarak);
+        System.out.println(kuadran);
     }
 }
