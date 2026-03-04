@@ -55,4 +55,37 @@ public class Titik {
         double y = Math.pow(T.ordinat - this.ordinat, 2);
         return Math.pow(x + y, 0.5);
     }
+
+    double getJarakPusat() {
+        double x = Math.pow(this.absis, 2);
+        double y  = Math.pow(this.ordinat, 2);
+
+        return Math.pow(x + y, 0.5);
+    }
+
+    void refleksiY() {
+        this.absis = -this.absis;
+    }
+
+    void refleksiX() {
+        this.ordinat = -this.ordinat;
+    }
+
+    Titik getRefleksiY() {
+        Titik tNew = new Titik();
+        tNew.setAbsis(this.absis);
+        tNew.setOrdinat(this.ordinat);
+
+        tNew.refleksiY();
+        return tNew;
+    }
+
+    Titik getRefleksiX() {
+        Titik tNew = new Titik();
+        tNew.setAbsis(this.absis);
+        tNew.setOrdinat(this.ordinat);
+
+        tNew.refleksiX();
+        return tNew;
+    }
 }
