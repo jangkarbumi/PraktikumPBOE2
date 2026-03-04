@@ -5,38 +5,43 @@
 
 public class Titik {
     //ATRIBUT
-    double absis;
-    double ordinat;
+    private double absis;
+    private double ordinat;
 
-    Titik() {
-        absis = 0;
-        ordinat = 0;
+    public Titik() {
+        this.absis = 0;
+        this.ordinat = 0;
     }
 
-    double getAbsis() {
+    public Titik(double x, double y) {
+        this.absis = x;
+        this.ordinat = y;
+    }
+
+    public double getAbsis() {
         return absis;
     }
-    double getOrdinat() {
+    public double getOrdinat() {
         return ordinat;
     }
 
-    void setAbsis(double x) {
+    public void setAbsis(double x) {
         absis = x;
     }
-    void setOrdinat(double y) {
+    public void setOrdinat(double y) {
         ordinat = y;
     }
 
-    void geser(double x, double y) {
+    public void geser(double x, double y) {
         absis += x;
         ordinat += y;
     }
 
-    void printTitik() {
+    public void printTitik() {
         System.out.println("Titik (" + absis + ", " + ordinat + ")");
     }
 
-    int getKuadran() {
+    public int getKuadran() {
         if (absis > 0 && ordinat > 0) {
             return 1;
         }
@@ -50,28 +55,28 @@ public class Titik {
         else return -1;
     }
 
-    double getJarak(Titik T) {
+    public double getJarak(Titik T) {
         double x = Math.pow(T.absis - this.absis, 2);
         double y = Math.pow(T.ordinat - this.ordinat, 2);
         return Math.pow(x + y, 0.5);
     }
 
-    double getJarakPusat() {
+    public double getJarakPusat() {
         double x = Math.pow(this.absis, 2);
         double y  = Math.pow(this.ordinat, 2);
 
         return Math.pow(x + y, 0.5);
     }
 
-    void refleksiY() {
+    public void refleksiY() {
         this.absis = -this.absis;
     }
 
-    void refleksiX() {
+    public void refleksiX() {
         this.ordinat = -this.ordinat;
     }
 
-    Titik getRefleksiY() {
+    public Titik getRefleksiY() {
         Titik tNew = new Titik();
         tNew.setAbsis(this.absis);
         tNew.setOrdinat(this.ordinat);
@@ -80,7 +85,7 @@ public class Titik {
         return tNew;
     }
 
-    Titik getRefleksiX() {
+    public Titik getRefleksiX() {
         Titik tNew = new Titik();
         tNew.setAbsis(this.absis);
         tNew.setOrdinat(this.ordinat);
