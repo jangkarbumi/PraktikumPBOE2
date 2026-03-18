@@ -23,6 +23,11 @@ public class DosenTamu extends Dosen {
         return this.tanggalBerakhirKontrak;
     }
 
+    @Override
+    public double countTunjangan() {
+        return getTunjangan() / 100 * getMasaKerja().getYears();
+    }
+
     //MUTATOR
     public void setNIDK(String NIDK) {
         this.NIDK = NIDK;
@@ -36,9 +41,7 @@ public class DosenTamu extends Dosen {
     @Override
     public void printInfo() {
         super.printInfo();
-        System.out.println("Jabatan: " + getJabatan());
-        System.out.println("Fakultas: " + getFakultas());
+        System.out.println("NIDK: " + getNIDK());
         System.out.println("Tanggal Berakhir Kontrak: " + getTanggalBerakhirKontrak());
-        System.out.println("Tanggal Pensiun: " + formatTanggal(getTanggalPensiun(getBUP())));
     }
 }

@@ -103,13 +103,12 @@ public class Pegawai {
         this.tunjangan = tunjangan;
     }
 
-
     //FUNGSI TAMBAHAN/PEMBANTU
     public String formatTanggal(LocalDate tanggal) {
         return tanggal.format(DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale.of("id")));
     }
 
-    public double countTujangan() {
+    public double countTunjangan() {
         return getTunjangan() / 100 * getMasaKerja().getYears() * getGaji();
     }
 
@@ -119,8 +118,9 @@ public class Pegawai {
         System.out.println("Nama: " + getNama());
         System.out.println("Tanggal Lahir: " + formatTanggal(getTanggalLahir()));
         System.out.println("TMT: " + formatTanggal(getTMT()));
-        System.out.println("Masa Kerja: " + getMasaKerja().getYears() + "Tahun" + getMasaKerja().getMonths() + "Bulan");
+        System.out.println("Masa Kerja: " + getMasaKerja().getYears() + " Tahun " + getMasaKerja().getMonths() + " Bulan");
         System.out.println("Gaji Pokok: " + "Rp." +  getGaji());
-        System.out.println("Tunjangan: " + getTunjangan() + "%" + " x " + getMasaKerja().getYears() + " x " + " Rp" + getGaji() + " = " + countTujangan());
+        System.out.println("Tunjangan: " + getTunjangan() + "%" + " x " + getMasaKerja().getYears() + " x " + " Rp" + getGaji() + " = " + countTunjangan());
+        System.out.println("Tanggal Pensiun: " + formatTanggal(getTanggalPensiun(getBUP())));
     }
 }
