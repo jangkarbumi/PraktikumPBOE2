@@ -3,31 +3,37 @@ import java.time.LocalDate;
 
 public class Dosen extends Pegawai {
     //ATTRIBUT
-    private String fakultas;
     private String jabatan;
+    private String fakultas;
 
     //KONSTRUKTOR
-    public Dosen(String NIP, String nama, LocalDate tanggallahir, LocalDate tmt, int gaji, double tunjangan, String fakultas, String jabatan) {
+    public Dosen(String NIP, String nama, LocalDate tanggallahir, LocalDate tmt, int gaji, double tunjangan, String jabatan, String fakultas) {
         super(NIP, nama, tanggallahir, tmt, gaji, tunjangan, 65);
-        this.fakultas = fakultas;
         this.jabatan = jabatan;
+        this.fakultas = fakultas;
     }
 
     //SELEKTOR
+    public String getJabatan() {
+        return this.jabatan;
+    }
     public String getFakultas() {
         return this.fakultas;
     }
 
-    public String getJabatan() {
-        return this.jabatan;
+    //MUTATOR
+    public void setJabatan(String jabatan) {
+        this.jabatan = jabatan;
     }
 
-    //MUTATOR
     public void setFakultas(String fakultas) {
         this.fakultas = fakultas;
     }
 
-    public void setJabatan(String jabatan) {
-        this.jabatan = jabatan;
+    @Override
+    public void printInfo() {
+        super.printInfo();
+        System.out.println("Fakultas: " + getFakultas());
+        System.out.println("Jabatan: " + getJabatan());
     }
 }

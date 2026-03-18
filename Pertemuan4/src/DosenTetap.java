@@ -27,8 +27,6 @@ public class DosenTetap extends Dosen {
     @Override
     public void printInfo() {
         super.printInfo();
-        System.out.println("Jabatan: " + getJabatan());
-        System.out.println("Fakultas: " + getFakultas());
-        System.out.println("Tanggal Pensiun: " + formatTanggal(getTanggalPensiun(getBUP())));
+        System.out.println("NIDN: " + getNIDN());
     }
 }   
