@@ -1,3 +1,10 @@
+/**
+ * File : MainPegawai.java
+ * deskripsi : Main dari aplikasi pegawai
+ * nama : Wahyu Aji Gumemlar Tri Nugroho
+ * tanggal : 18 Maret 2026
+ */
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

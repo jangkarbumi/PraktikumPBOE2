@@ -1,3 +1,9 @@
+/**
+ * File : Dosen.java
+ * deskripsi : Class dosen
+ * nama : Wahyu Aji Gumemlar Tri Nugroho
+ * tanggal : 18 Maret 2026
+ */
 
 import java.time.LocalDate;
 

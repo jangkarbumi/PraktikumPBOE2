@@ -1,3 +1,9 @@
+/**
+ * File : DosenTamu.java
+ * deskripsi : Class Dosen Tamu
+ * nama : Wahyu Aji Gumemlar Tri Nugroho
+ * tanggal : 18 Maret 2026
+ */
 
 import java.time.LocalDate;
 
