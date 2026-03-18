@@ -6,27 +6,33 @@ import java.util.Locale;
 
 public class Pegawai {
     //ATTRIBUT
-    protected String NIP;
-    protected String nama;
-    protected LocalDate tanggallahir;
-    protected LocalDate tmt;
-    protected int gaji;
+    private String NIP;
+    private String nama;
+    private LocalDate tanggallahir;
+    private LocalDate tmt;
+    private int gaji;
+    private double tunjangan;
+    private int bup;
 
     //KONSTRUKTOR
-    public Pegawai() {
+    public Pegawai() { 
         this.NIP = "";
         this.nama = "";
         this.tanggallahir = null;
         this.tmt = null;
         this.gaji = 0;
+        this.tunjangan = 0;
+        this.bup = 0;
     }
 
-    public Pegawai(String NIP, String nama, LocalDate tanggallahir, LocalDate tmt, int gaji) {
+    public Pegawai(String NIP, String nama, LocalDate tanggallahir, LocalDate tmt, int gaji, double tunjangan, int bup) {
         this.NIP = NIP;
         this.nama = nama;
         this.tanggallahir = tanggallahir;
         this.tmt = tmt;
         this.gaji = gaji;
+        this.tunjangan = tunjangan;
+        this.bup = bup;
     }
 
     //METHOD
@@ -60,6 +66,14 @@ public class Pegawai {
         return getTanggalLahir().plusYears(bup).plusMonths(1).withDayOfMonth(1);
     }
 
+    public double getTunjangan() {
+        return this.tunjangan;
+    }
+
+    public int getBUP() {
+        return this.bup;
+    }
+
     //MUTATOR
     public void setNIP(String NIP) {
         this.NIP = NIP;
@@ -81,7 +95,32 @@ public class Pegawai {
         this.gaji = gaji;
     }
 
+    public void setBUP(int bup) {
+        this.bup = bup;
+    }
+
+    public void setTunjangan(double tunjangan) {
+        this.tunjangan = tunjangan;
+    }
+
+
+    //FUNGSI TAMBAHAN/PEMBANTU
     public String formatTanggal(LocalDate tanggal) {
         return tanggal.format(DateTimeFormatter.ofPattern("dd MMMM yyyy", Locale.of("id")));
+    }
+
+    public double countTujangan() {
+        return getTunjangan() / 100 * getMasaKerja().getYears() * getGaji();
+    }
+
+    //printInfo
+    public void printInfo() {
+        System.out.println("NIP: " + getNIP());
+        System.out.println("Nama: " + getNama());
+        System.out.println("Tanggal Lahir: " + formatTanggal(getTanggalLahir()));
+        System.out.println("TMT: " + formatTanggal(getTMT()));
+        System.out.println("Masa Kerja: " + getMasaKerja().getYears() + "Tahun" + getMasaKerja().getMonths() + "Bulan");
+        System.out.println("Gaji Pokok: " + "Rp." +  getGaji());
+        System.out.println("Tunjangan: " + getTunjangan() + "%" + " x " + getMasaKerja().getYears() + " x " + " Rp" + getGaji() + " = " + countTujangan());
     }
 }

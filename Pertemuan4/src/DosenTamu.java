@@ -5,11 +5,11 @@ public class DosenTamu extends Dosen {
     //ATRIBUT
     private String NIDK;
     private LocalDate tanggalBerakhirKontrak;
-    private static double tunjangan = 2.5;
+    private static final double PERSEN_TUNJANGAN_DOSEN_TAMU = 2.5;
 
     //KONSTRUKTOR
-    public DosenTamu(String NIP, String nama, LocalDate tanggallahir, LocalDate tmt, int gaji, String fakultas, String jabatan, String NIDK, LocalDate tanggalBerakhirKontrak, double tunjangan) {
-        super(NIP, nama, tanggallahir, tmt, gaji, fakultas, jabatan);
+    public DosenTamu(String NIP, String nama, LocalDate tanggallahir, LocalDate tmt, int gaji, String fakultas, String jabatan, String NIDK, LocalDate tanggalBerakhirKontrak) {
+        super(NIP, nama, tanggallahir, tmt, gaji, PERSEN_TUNJANGAN_DOSEN_TAMU, fakultas, jabatan);
         this.NIDK = NIDK;
         this.tanggalBerakhirKontrak = tanggalBerakhirKontrak;
     }
@@ -33,22 +33,12 @@ public class DosenTamu extends Dosen {
     }
 
 
-    //FUNGSI TAMBAHAN
-    private double countTunjangan(double tunjangan) {
-        return tunjangan / 100 * getMasaKerja().getYears() * getGaji();
-    }
-
+    @Override
     public void printInfo() {
-        System.out.println("NIP: " + getNIP());
-        System.out.println("NIDK: " + getNIDK());
-        System.out.println("Nama: " + getNama());
-        System.out.println("Tanggal Lahir: " + formatTanggal(getTanggalLahir()));
-        System.out.println("TMT: " + formatTanggal(getTMT()));
+        super.printInfo();
         System.out.println("Jabatan: " + getJabatan());
         System.out.println("Fakultas: " + getFakultas());
-        System.out.println("Masa Kerja: " + getMasaKerja().getYears() + "Tahun" + getMasaKerja().getMonths() + "Bulan");
         System.out.println("Tanggal Berakhir Kontrak: " + getTanggalBerakhirKontrak());
-        System.out.println("Gaji Pokok: " + "Rp." +  getGaji());
-        System.out.println("Tunjangan: " + tunjangan + "%" + " x " + getMasaKerja().getYears() + " x " + " Rp" + getGaji() + " = " + countTunjangan(tunjangan));
+        System.out.println("Tanggal Pensiun: " + formatTanggal(getTanggalPensiun(getBUP())));
     }
 }
