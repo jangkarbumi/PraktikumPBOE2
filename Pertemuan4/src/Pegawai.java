@@ -1,3 +1,10 @@
+/**
+ * File : Pegawai.java
+ * deskripsi : Class pegawai
+ * nama : Wahyu Aji Gumemlar Tri Nugroho
+ * tanggal : 18 Maret 2026
+ */
+
 
 import java.time.LocalDate;
 import java.time.Period;
