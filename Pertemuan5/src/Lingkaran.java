@@ -1,5 +1,5 @@
 /**
- * File : BangunDatar.java
+ * File : Lingkaran.java
  * deskripsi : Impelementasi Abstract Class bangun datar Lingkaran
  * nama : Wahyu Aji Gumelar Tri Nugroho
  * tanggal : 24 Maret 2026

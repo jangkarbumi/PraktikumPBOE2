@@ -1,5 +1,5 @@
 /**
- * File : BangunDatar.java
+ * File : MainBangunDatar.java
  * deskripsi : File main
  * nama : Wahyu Aji Gumelar Tri Nugroho
  * tanggal : 24 Maret 2026
