@@ -42,7 +42,7 @@ public class Pengusaha extends Manusia implements Pajak {
 
     @Override
     public double hitungPajak() {
-        return (15/100) * getPendapatan();
+        return (15.0/100.0) * getPendapatan();
     }
 
     public static int getCounterPengusaha() {

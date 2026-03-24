@@ -49,7 +49,7 @@ public class PNS extends Manusia implements Pajak {
 
     @Override
     public double hitungPajak() {
-        return (10/100) * getPendapatan();
+        return (10.0/100.0) * getPendapatan();
     }
 
     @Override
