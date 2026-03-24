@@ -10,13 +10,13 @@ public abstract  class BangunDatar {
     private String warna;
     private String border;
 
-    public BangunDatar() {
+    protected BangunDatar() {
         this.jumSisi = 0;
         this.warna = "";
         this.border = "";
     }
 
-    public BangunDatar(int sisi, String warna, String border) {
+    protected BangunDatar(int sisi, String warna, String border) {
         this.jumSisi = sisi;
         this.warna = warna;
         this.border = border;
