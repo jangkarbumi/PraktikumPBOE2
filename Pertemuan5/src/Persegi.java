@@ -4,7 +4,7 @@
  * nama : Wahyu Aji Gumelar Tri Nugroho
  * tanggal : 24 Maret 2026
  */
-public class Persegi extends BangunDatar {
+public class Persegi extends BangunDatar implements IResize {
     private double panjangSisi;
 
     public Persegi() {
@@ -35,6 +35,21 @@ public class Persegi extends BangunDatar {
     @Override
     public double getKeliling() {
         return 4 * panjangSisi;
+    }
+
+    @Override
+    public void zoomIn() {
+        panjangSisi *= 1.1;
+    }
+
+    @Override
+    public void zoomOut() {
+        panjangSisi *= 0.9;
+    }
+
+    @Override
+    public void zoom(int percent) {
+        panjangSisi *= percent / 100;
     }
 
     @Override

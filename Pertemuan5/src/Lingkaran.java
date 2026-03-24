@@ -4,7 +4,7 @@
  * nama : Wahyu Aji Gumelar Tri Nugroho
  * tanggal : 24 Maret 2026
  */
-public class Lingkaran extends BangunDatar {
+public class Lingkaran extends BangunDatar implements IResize {
     private double radius;
     private static double PI = 3.14;
 
@@ -40,6 +40,21 @@ public class Lingkaran extends BangunDatar {
 
     public void setRadius(double radius) {
         this.radius = radius;
+    }
+
+    @Override
+    public void zoomIn() {
+        radius *= 1.1;
+    }
+
+    @Override
+    public void zoomOut() {
+        radius *= 0.9;
+    }
+
+    @Override
+    public void zoom(int percent) {
+        radius *= percent / 100;
     }
 
     @Override
